@@ -10,5 +10,5 @@ Instructions for use:
 7. The 4 output files generated are: 
 (a) trackingmovie.TIF contains the tracked segments for visual inspection 
 (b) segmentedmovie.TIF: The time series with the overlaid centers of objects detected (either using RegionMax or centroid), 
-(c) trajectories.txt: It contains the trajectory information as >>[ObjID, Frame,	X,  Y,  Length (�), Time (�)]. The time is in units frames, and the XY positions in units of pixels, length corresponds to the long-axis length of the object.
+(c) trajectories.txt: It contains the trajectory information as >>[ObjID, Frame,	X,  Y,  Length (pixels), Time (frames)]. The time is in units frames, and the XY positions in units of pixels, length corresponds to the long-axis length of the object.
 (d) untracked.txt: All object coordinates in x and y-coordinates with frame numbers.  
