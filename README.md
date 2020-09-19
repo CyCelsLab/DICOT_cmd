@@ -2,7 +2,7 @@
 Command line DIC Object Tracking ([DICOT](https://github.com/CyCelsLab/DICOT_cmd)) code written in MATLAB to analyze DIC image time-series.  
 Authors: @athale , @anushreec , @ykjawale , @dhruv
 
-![GitHub release](https://img.shields.io/github/v/release/CyCelsLab/DICOT_cmd?style=for-the-badge)
+![GitHub release](https://img.shields.io/github/v/release/ykjawale/DICOT_cmd?style=for-the-badge)
 
 ### Reference
 __Quantifying Intracellular Particle Flows by DIC Object Tracking (DICOT)__  
