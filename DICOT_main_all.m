@@ -44,6 +44,7 @@ while(1)
     kernel_choice  = generate_kernel(filter_size, sigma_seg, sens_fact, bw, filter_type);
     DICOT_seg_overlay(test_image, kernel_choice, user_choice{6});
     %=====================================================================%
+    definput_seg =  {user_choice{1},user_choice{2},user_choice{3}, user_choice{4}, user_choice{5}, user_choice{6}};
     choice_segmentation = questdlg('continue with these parameters? ');
     switch choice_segmentation
         case 'Yes'
@@ -52,7 +53,6 @@ while(1)
         case 'No'
             continue 
     end
-    definput_seg =  {user_choice{1},user_choice{2},user_choice{3}, user_choice{4}, user_choice{5}, user_choice{6}};
 end
 %% Segmentation output
 % Selected parameters
