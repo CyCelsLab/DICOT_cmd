@@ -2,6 +2,7 @@
 % Created by: Dhruv Khatri, summarizes dicot workflow written by Yash,
 % Anushree, Dhruv , C.A.Athale
 % last update: 20/March/2020
+% 2020 September | YJ
 %{
 Changed Filenames
 migLoop = DICOT_segmentation
@@ -11,7 +12,7 @@ migLoop = DICOT_segmentation
 [filename,pathname]=uigetfile('*.tif', 'Select an image time-series (.tif)');
 fullfilename=[pathname,filename];
 [~,fname,~]=fileparts(filename);
-outfolder= [pathname,'msg-', fname];
+outfolder= [pathname,'DICOT_', fname];
 if ~exist(outfolder, 'dir')
     mkdir(outfolder);
 else
@@ -24,12 +25,12 @@ else
     end 
 end
 %% Initialize variables for segmentation
+definput_seg =  {'9','1.25','0.001', '1', 'SoG', 'Y'};
 while(1)
     prompt_seg = {'Enter filter size:', 'Enter sigma value (Enter two comma separated values for DoG) :',...
         'Enter sensitivity factor:', 'Black(-1) or white(1) granules:', 'Enter fiter type {SoG,LoG,DoG}','Apply Reional Max (Y/N)'};
     dlgtitle_seg = 'Segmentation parameters';
     dims_seg = [1 40];
-    definput_seg =  {'9','1.25','0.001', '1', 'SoG', 'Y'};
     user_choice = inputdlg(prompt_seg, dlgtitle_seg, dims_seg, definput_seg);
     %===============Segmentation results with current parameters==========%
     % read in image data frame one and display segmentation output
@@ -43,6 +44,7 @@ while(1)
     kernel_choice  = generate_kernel(filter_size, sigma_seg, sens_fact, bw, filter_type);
     DICOT_seg_overlay(test_image, kernel_choice, user_choice{6});
     %=====================================================================%
+    definput_seg =  {user_choice{1},user_choice{2},user_choice{3}, user_choice{4}, user_choice{5}, user_choice{6}};
     choice_segmentation = questdlg('continue with these parameters? ');
     switch choice_segmentation
         case 'Yes'
