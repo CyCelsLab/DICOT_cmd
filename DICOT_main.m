@@ -11,7 +11,7 @@ migLoop = DICOT_segmentation
 [filename,pathname]=uigetfile('*.tif', 'Select an image time-series (.tif)');
 fullfilename=[pathname,filename];
 [~,fname,~]=fileparts(filename);
-outfolder= [pathname,'msg-', fname];
+outfolder= [pathname,'DICOT_', fname];
 if ~exist(outfolder, 'dir')
     mkdir(outfolder);
 else
