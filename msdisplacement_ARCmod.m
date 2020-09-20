@@ -1,8 +1,3 @@
-%% Modified Anushree 24/2/2018
-% Neha Khetan, SOCM lab , Autumn 2012, 25 June 2015 
-% Code last modified in October 2013 (compared with CA code) & adapted to MATLAB from Octave
-
-
 % USAGE: [dt,rr]=msd(data,deltaT)
 %       where, data: simulation output file, deltaT= simulation steptime
 % Two functions are incorporated here: msdisplacement and polyfitZero
@@ -11,36 +6,42 @@
 % time truncation at chromatin
 
 function [dt,rr]=msdisplacement_ARCmod( t , xx , yy,hue)
+%[...] = MSDDISPLACEMENT_ARCMOD(T, X, Y, C) returns MSD values
+% ===== AUX Function =====
+%   Inputs
+%       T - delta_t
+%       X - X coordinates
+%       Y - Y coordinates
+%       C - color
+%
+%   DT time axis values
+%   RR msd values
 
-%for different start points
+% DICOT (CyCelS lab, IISER Pune)
 
-% choosing the sliding window range i.e.
-% for given 10 points, range of sliding window would be say from.. 1,2......7
-% Now, picking each sliding windown length and then going over the track
+u=1:1:round(3*length(t)/4); % fit 75% average tracks length for MSD
+sqD1=cell(1,numel(u)); % preallocating
+msqD1= sqD1; % preallocating
+for dT = round(u) % slow [Y] _implement_matrix_operations
 
-u=1:1:round(3*length(t)/4); %ARC
-sqD1=cell(1,numel(u)); %ARC preallocating
-msqD1= sqD1; %ARC preallocating
-for dT = round(u)    
-
-	sqD1{dT}=zeros(numel(1:1:length(t)-dT),1); %ARC altered
+	sqD1{dT}=zeros(numel(1:1:length(t)-dT),1); % altered
     for n=1:1:length(t)-dT
-        sqD1{dT}(n,:)=((xx(n)-xx(n+dT)).^2)+((yy(n)-yy(n+dT)).^2); %ARC  altered    
+        sqD1{dT}(n,:)=((xx(n)-xx(n+dT)).^2)+((yy(n)-yy(n+dT)).^2); %altered    
     end
     
 	% For a given dT, from multiple sqD1 values, finding the mean of it
-    if size(t,1)>dT % condition added 29/6/2018 ARC
+    if size(t,1)>dT % condition added
     msqD1{dT} = [ t(dT+1), mean( sqD1{dT}(:) ) ];
     else
-        continue
+        continue % add more function
     end
 end
 
-catmsqD1=cat(1,msqD1{:}); %ARC
+catmsqD1=cat(1,msqD1{:}); % reformat
 % For each dt, return the rr
-dt    = [0;catmsqD1(:,1)]; %ARC
-rr    = [0;catmsqD1(:,2)]; %ARC
-figure(gcf),
+dt    = [0;catmsqD1(:,1)]; % time X-axis
+rr    = [0;catmsqD1(:,2)]; % MSD Y-axis
+figure(gcf), % plot MSD plot
 hold on,
 plot(dt,rr,'-','Color', hue, 'Linewidth', 1)
 

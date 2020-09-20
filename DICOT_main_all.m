@@ -1,7 +1,11 @@
 %% ========== DICOT ==========
 % DIC Object Tracker
 % DICOT workflow written by Yash Jawale, Anushree, Dhruv, C.A.Athale
+% DOI: ...
 % GitHub source: https://github.com/CyCelsLab/DICOT_cmd
+% Selfhosted: http://www.iiserpune.ac.in/~cathale/?page_id=366
+%
+% DICOT (CyCelS lab, IISER Pune)
 % ========== ===== ==========
 %
 %% ========== User input for time series ==========
