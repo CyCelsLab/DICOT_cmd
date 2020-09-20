@@ -1,5 +1,9 @@
 function Answer=newid(Prompt, Title, NumLines, DefAns, Resize)
-%Modified by Anushree R. Chaphalkar 16/5/2018
+% ===== AUX Function =====
+% MATLAB "id.m" function modified by Anushree R. Chaphalkar 16/5/2018
+
+% DICOT (CyCelS lab, IISER Pune)
+
 %INPUTDLG Input dialog box.
 %  ANSWER = INPUTDLG(PROMPT) creates a modal dialog box that returns user
 %  input for multiple prompts in the cell array ANSWER. PROMPT is a cell

@@ -1,6 +1,10 @@
 function varargout=shadedErrorBar(x,y,errBar,varargin)
+% ===== AUX Function =====
+% MATLAB "shadedErrorBar.m" function modified by Anushree R. Chaphalkar 16/5/2018
 % generate continuous error bar area around a line plot
-%
+
+% DICOT (CyCelS lab, IISER Pune)
+
 % function H=shadedErrorBar(x,y,errBar, ...)
 %
 % Purpose 

@@ -4,6 +4,8 @@ Authors: @athale , @anushreec , @ykjawale , @dhruv
 
 ![GitHub release](https://img.shields.io/github/v/release/ykjawale/DICOT_cmd?style=for-the-badge)
 
+[DICOT GUI](https://github.com/CyCelsLab/DICOT), with a GUI also available
+
 ### Reference
 __Quantifying Intracellular Particle Flows by DIC Object Tracking (DICOT)__  
 A. R. Chaphalkar, Y. K. Jawale, D. Khatri, and C. A. Athale  
