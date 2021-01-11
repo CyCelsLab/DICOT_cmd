@@ -9,7 +9,7 @@ Authors: @athale , @anushreec , @ykjawale , @dhruv
 ### Reference
 __Quantifying Intracellular Particle Flows by DIC Object Tracking (DICOT)__  
 A. R. Chaphalkar, Y. K. Jawale, D. Khatri, and C. A. Athale  
-DOI: [...](doi.org/...)  
+DOI: [10.1016/j.bpj.2020.12.013](https://doi.org/10.1016/j.bpj.2020.12.013)  
 
 ### Instructions for use:
 1. Download the entire folder
